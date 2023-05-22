@@ -24,10 +24,21 @@ function numberOfCharacters(string) {
    // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
    // Tu código:
 
-   var string = []
+   var acumulador = {}
+   var fixedString = string.split('').sort(function(a,b) {
+      if(a>b) return 1;
+      if(a<b) return -1;
+      return 0;
+   }).join("")
    for(var i = 0; i < string.length; i++) {
-
+      var str = string[i]
+      if(acumulador[str] === undefined) {
+         acumulador[str] = 1;
+      } else {
+         acumulador[str] += 1;
+      }
    }
+   return acumulador
 }
 
 function capToFront(string) {
@@ -60,6 +71,17 @@ function capicua(numero) {
    // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
    // Caso contrario: "No es capicua".
    // Tu código:
+   var numeroNuevo = '';
+   numeroNuevo = numero.toString();
+   var numeroAlReves = ''
+   for(var i = numeroNuevo.length - 1; i >= 0; i--){
+      numeroAlReves += numeroNuevo[i]
+   }
+   if(numeroNuevo === numeroAlReves) {
+      return "Es capicua";
+   } else {
+      return "No es capicua";
+   }
 }
 
 function deleteAbc(string) {
@@ -80,6 +102,12 @@ function sortArray(arrayOfStrings) {
    // de la longitud de cada string.
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
+   var contador = []
+   for(var i = 0; i < arrayOfStrings.length; i++) {
+      
+   }
+
+   //comparar el length de cada string
 }
 
 function buscoInterseccion(array1, array2) {
