@@ -64,7 +64,16 @@ function asAmirror(frase) {
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
-   unshift
+   var arregloDeFrase = frase.split(' ')
+   var acumulador = []
+   for(var i = 0; i < arregloDeFrase.length; i++) {
+      var acumuladorFrase = '';
+      for(var j = arregloDeFrase[i].length - 1; j >= 0; j--) {
+         acumuladorFrase += arregloDeFrase[i][j];
+      }
+      acumulador.push(acumuladorFrase)
+   }
+   return acumulador.join(' ')
 }
 
 function capicua(numero) {
@@ -102,10 +111,18 @@ function sortArray(arrayOfStrings) {
    // de la longitud de cada string.
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
-   var contador = []
-   for(var i = 0; i < arrayOfStrings.length; i++) {
-      
-   }
+
+   arrayOfStrings = arrayOfStrings.sort((a, b) => a.length - b.length)
+   return arrayOfStrings;
+
+   //var acumulador = []
+   //for(var i = 0; i < arrayOfStrings.length - 1; i++) {
+   //   for(var j = 0; j < arrayOfStrings[i].length; j++) {
+   //      if(arrayOfStrings[j].length < arrayOfStrings[j].length) {
+   //         acumulador.push(arrayOfStrings[j])
+  //       }
+ //     }
+ //  } return acumulador
 
    //comparar el length de cada string
 }
